@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part1</title>
+</head>
+<body>
+    <div>
+        <h1>Please Enter Your Details For Our Dating Website!</h1>
+        <form action = "http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php " method = "post">
+            <fieldset>
+                <legend>Your Face</legend>
+                <label for = "avatar">Your image:</label>
+                <input type = "file" id = "avatar" name = "avatar" required> <br>
+                <label for = "preview">Image preview:</label>
+                <img src = "" id = "preview" alt = "">
+            </fieldset>
+        
+            <fieldset>
+                <legend>Your General Details</legend>
+                <label for = "name">Name:</label>
+                <input type = "text" id = "name" name = "name" required> <br>
+                <label for = "">Gender:</label>
+                <input type = "radio" id = "gender_male" name = "gender" value = "male" required><label for = "gender_male">Male</label>
+                <input type = "radio" id = "gender_female" name = "gender" value = "female" required><label for = "gender_female">Female</label> <br>
+                <label for = "age">Age:</label>
+                <input type = "number" name = "age" id = "age" required> <br>
+                <label for = "birthday">Date of birth:</label>
+                <input type = "date" id = "birthday" name = "birthday"> <br>
+                <label for = "color">Favorite color:</label>
+                <input type = "color" name = "color" id = "color"> <br>
+                <label for = "country">Which country:</label>
+                <select name = "country" id = "country">
+                    <option value = "no selection"></option>
+                    <option value = "Belgium">Belgium</option>
+                    <option value = "Canada">Canada</option>
+                    <option value = "Italy">Italy</option>
+                    <option value = "Netherlands">Netherlands</option>
+                    <option value = "Switzerland">Switzerland</option>
+                </select>
+            </fieldset>
+        
+            <fieldset>
+                <legend>Your Indecators</legend>
+                <label for = "height">Height:</label>
+                Short <input type = "range" id = "height" name = "height" min = "0" max = "100"> Tall <br>
+                <label for = "salary">Salary:</label>
+                Poor <input type = "range" id = "salary" name = "salary" min="0" max = "100"> Rich
+            </fieldset>
+        
+            <fieldset>
+                <legend>Your Contact Information</legend>
+                <label for = "email">Email:</label>
+                <input type = "email" id = "email" name = "email" required> <br>
+                <label for = "mobile">Mobile:</label>
+                <input type = "tel" id = "mobile" name = "mobile"> <br>
+                <label for = "address">Address:</label>
+                <textarea name = "address" id = "address" cols = "30" rows = "1"></textarea> <br>
+                <label for = "">Method to contact you:</label>
+                <input type = "checkbox" id = "contact1" name = "contact" value = "email"><label for = "contact1" class = "width_auto">Email</label> 
+                <input type = "checkbox" id="contact2" name = "contact" value = "whatsapp"><label for = "contact2">Whatsapp</label>
+                <input type = "checkbox" id="contact3" name = "contact" value = "chat"><label for = "contact3">In-app chat</label> 
+            </fieldset>
+            <input type = "submit" value = "Submit">
+        </form>
+   </div>
+</body>
+</html>
