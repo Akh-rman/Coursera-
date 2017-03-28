@@ -16,10 +16,10 @@
             alert(target);
             while(true) {
                 guess_input = prompt("I am thinking of one of these colors:\n" + colors.join() + 
-                "What color am I thinking of?");
+                "\n What color am I thinking of?");
                 if(guess_input == colors[target_index]){
                     document.querySelector("body").style.background = target;
-                    alert("Congratulations! You have guessed the color\n You can see the color in the backgroung");
+                    //alert("Congratulations! You have guessed the color\n You can see the color in the backgroung");
                     break;
                 }
             }                          
