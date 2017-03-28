@@ -7,13 +7,15 @@
 <body onload = "do_game()">
     <script>
         var colors = ["black", "blue", "cyan", "fuchsia", "green", "maroon", "orange", "purple", "yellow", "white"];
+        colors.sort();
         var index = colors.length;
+        var guess_input, target;
         function do_game() {
             var target_index = Math.floor(Math.random() * index);
-            var target = colors[target_index];
+            target = colors[target_index];
             alert(target);
             while(true) {
-                var guess_input = prompt("I am thinking of one of these colors:\n" + colors.join() + 
+                guess_input = prompt("I am thinking of one of these colors:\n" + colors.join() + 
                 "What color am I thinking of?");
                 if(guess_input == colors[target_index]){
                     document.querySelector("body").style.background = target;
