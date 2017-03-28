@@ -16,7 +16,7 @@
             alert(target);
             while(!finish) {
                 guess_input = prompt("I am thinking of one of these colors:\n" + colors.join( ) + 
-                "What color am I thinking of?");
+                "\n What color am I thinking of?");
                 console.log(target_index);
                 console.log(target);
                 guesses++;
@@ -30,14 +30,14 @@
                 return false;
             }
             else if (guess_input > target) {
-                alert("Sorry your guess is not correct!\n Hint: your color is alphabetically higher than mine\n. Please try again.");
+                alert("Sorry your guess is not correct!\n Hint: your color is alphabetically higher than mine.\n Please try again.");
                 return false;
             } else if (guess_input < target) {
-                alert("Sorry your guess is not correct!\n Hint: your color is alphabetically lower than mine\n. Please try again.");
+                alert("Sorry your guess is not correct!\n Hint: your color is alphabetically lower than mine.\n Please try again.");
                 return false;
             } else {
-                alert("Congratulations! You have guessed the color\n It took you " + guesses + " guesses to finish the game!\n You can see the color in the backgroung");
                 document.querySelector("body").style.background = target;
+                alert("Congratulations! You have guessed the color!\n It took you " + guesses + " guesses to finish the game!\n You can see the color in the backgroung.");
                 return true;
             }
         }
