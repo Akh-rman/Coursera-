@@ -46,7 +46,7 @@
                     <li><a href="contactus.html"><span class="fa-envelope-o"></span> Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#loginModal">
+                    <li><a id="login">
                     <span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a href="#reserveformModal" type="button" class="btn btn-warning btn-block">Reserve Table</a> 
+                    <a id="#reserveform" type="button" class="btn btn-warning btn-block">Reserve Table</a> 
                 </div>
             </div>
         </div>
@@ -352,6 +352,23 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <!--- <script src="js/script.js"></script> ----->
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel({interval: 2000});
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel("pause");
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel("cycle");
+            });
+            $("#login").click(function(){
+                $("#loginModal").modal("toggle");    
+            });
+            $("#reserveform").click(function(){
+                $("#reserveformModal").modal("toggle");    
+            });
+        });
+    </script>
 </body>
 </html>
