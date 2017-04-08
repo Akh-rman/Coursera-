@@ -10,4 +10,10 @@ $(document).ready(function(){
     $("#carousel-play").click(function(){
         $("#mycarousel").carousel("cycle");
     });
+    $("[href='#loginModal']").click(function(){
+        $("#loginModal").modal("show");    
+    });
+    $("[href='#reserveformModal']").click(function(){
+        $("#reserveformModal").modal("show");    
+    });
 });
