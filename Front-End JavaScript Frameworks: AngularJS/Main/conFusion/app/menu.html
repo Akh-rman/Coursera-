@@ -26,8 +26,34 @@
 <body>
 
     <div class="container">
-        <div class="row row-content">
+        <div class="row row-content" ng-init="
+                         dish=
+                         {
+                           name:'Uthapizza',
+                           image: 'images/uthapizza.png',
+                           category: 'mains',
+                           label:'Hot', 
+                           price:'4.99',
+                           description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+                           comment: ''
+                        }">
             <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
+                        </a> 
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{dish.name}}
+                        <span class="label label-danger">{{dish.label}}</span>
+                        <span class="badge">{{dish.price | currency}}</span></h2>
+                        <p>{{dish.description}}</p>
+                        <p>Comment: {{dish.comment}}</p>
+                        <p>Type your comment:
+                        <input type="text" ng-model="dish.comment"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
