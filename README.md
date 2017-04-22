@@ -3,3 +3,4 @@ Coursera. <br>
 
 1 курс: HTML, CSS and JavaScript. <br>
 2 курс: Front-End Web UI Frameworks and Tools. <br>
+3 курс: Front-End JavaScript Frameworks: AngularJS. <br>
