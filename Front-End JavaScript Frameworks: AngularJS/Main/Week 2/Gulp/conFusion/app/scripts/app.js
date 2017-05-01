@@ -1,7 +1,9 @@
 'use strict';
 var app=angular.module('confusionApp',[]);
 app.controller('MenuController', ['$scope', function($scope) {
+    $scope.tab = 1;
     $scope.showDetails = false;
+    $scope.filtText = "";
     $scope.dishes=[
         {
             name:'Uthapizza',
@@ -39,30 +41,27 @@ app.controller('MenuController', ['$scope', function($scope) {
             description:'A delectable, semi-sweet New York Style C      cracker crust and spiced with Indian cardamoms',
             comment: ''
         }
-        ];
+    ];
 
-        $scope.dishes = dishes;
-        $scope.tab = 1;
             
-        $scope.select = function(setTab) {
-            this.tab = setTab;
+    $scope.select = function(setTab) {
+        $scope.tab = setTab;
                 
-            if (setTab === 2) {
-                $scope.filtText = "appetizer";
-            } else if (setTab === 3) {
-                $scope.filtText = "mains";
-            } else if (setTab === 4) {
-                $scope.filtText = "dessert";
-            } else {
-                $scope.filtText = "";}
-        };
+        if (setTab === 2) {
+            $scope.filtText = "appetizer";
+        } else if (setTab === 3) {
+            $scope.filtText = "mains";
+        } else if (setTab === 4) {
+            $scope.filtText = "dessert";
+        } else {
+            $scope.filtText = "";}
+    };
             
-        $scope.isSelected = function(checkTab) {
-            return ($scope.tab === checkTab);
-        };
-        $scope.filtText = "";
+    $scope.isSelected = function(checkTab) {
+        return ($scope.tab === checkTab);
+    };
       
-        $scope.toggleDetails = function() {
-            $scope.showDetails = !$scope.showDetails;
-        };
-    }]);
+    $scope.toggleDetails = function() {
+        $scope.showDetails = !$scope.showDetails;
+    };
+}]);
