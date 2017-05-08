@@ -1,6 +1,5 @@
 'use strict';
 angular.module('confusionApp')
-
 .service('menuFactory', function() {  
     var dishes=[
         {
@@ -189,6 +188,9 @@ angular.module('confusionApp')
         return dishes[index];
     };
     
+    this.getPromotion = function(index) {
+        return promotions[index];
+    }
     // implement a function named getPromotion
     // that returns a selected promotion.
     
@@ -230,5 +232,11 @@ angular.module('confusionApp')
     // Implement two functions, one named getLeaders,
     // the other named getLeader(index)
     // Remember this is a factory not a service
-    
+    corpfac.getLeaders = function() {
+        return leadership;
+    }
+    corpfac.getLeader = function(index) {
+        return leadership[index];
+    }
+    return corpfac;
 });

@@ -77,5 +77,10 @@ angular.module('confusionApp')
         $scope.mycomment = {rating:5, comment:"", author:"", date:""};
     }
 }])
-        // implement the IndexController and About Controller here
-;
+// implement the IndexController and About Controller here
+.controller('IndexController', ['$scope', function($scope) {
+    
+}])
+.controller('AboutController', ['$scope', function($scope) {
+    
+}]);
