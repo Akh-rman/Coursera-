@@ -53,7 +53,6 @@ gulp.task('copyfonts', ['clean'], function() {
     gulp.src('./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eof,svg}*')
     .pipe(gulp.dest('./dist/fonts'));
 });
-
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
     // Watch .js files
@@ -72,11 +71,11 @@ gulp.task('browser-sync', ['default'], function () {
     ];
 
     browserSync.init(files, {
-        server: {
-            baseDir: "dist",
-            index: "menu.html"
-        }
-    });
+      server: {
+         baseDir: "dist",
+         index: "index.html"
+      }
+   });
     // Watch any files in dist/, reload on change
     gulp.watch(['dist/**']).on('change', browserSync.reload);
 });
