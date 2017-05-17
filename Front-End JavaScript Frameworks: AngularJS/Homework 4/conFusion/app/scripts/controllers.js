@@ -50,7 +50,7 @@ angular.module('confusionApp')
     $scope.invalidChannelSelection = false;
                         
 }])
-.controller('FeedbackController', ['$scope', function($scope) {        
+.controller('FeedbackController', ['$scope', 'feedbackFactory', function($scope, feedbackFactory) {        
     $scope.sendFeedback = function() {       
         console.log($scope.feedback);
                 
@@ -62,8 +62,8 @@ angular.module('confusionApp')
             $scope.invalidChannelSelection = false;
             feedbackFactory.getFeedBack().save($scope.feedback);
             $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
-            $scope.feedback.mychannel="";
             $scope.feedbackForm.$setPristine();
+            console.log('Saved feedback: ' + JSON.stringify($scope.feedback));
             console.log($scope.feedback);
         }
     };
