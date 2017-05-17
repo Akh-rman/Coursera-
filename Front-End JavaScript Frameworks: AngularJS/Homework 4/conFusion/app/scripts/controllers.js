@@ -108,7 +108,16 @@ angular.module('confusionApp')
             $scope.message = "Error: "+response.status + " " + response.statusText;
         }
     );
-    $scope.promotion = menuFactory.getPromotion(0);
+    $scope.promotion = menuFactory.getPromotion().get({id:0})
+    .$promise.then(
+        function(response) {
+            $scope.promotion = response;
+            $scope.showPromotion = true;
+        },
+        function(response) {
+            $scope.message = "Error: "+response.status + " " + response.statusText;
+        }
+    );
     $scope.leader = corporateFactory.getLeader(3);
 }])
 .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
