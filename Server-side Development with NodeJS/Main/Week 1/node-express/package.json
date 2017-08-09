@@ -1,0 +1,14 @@
+{
+    "name": "express install",
+    "version": "1.0.0",
+    "description": "Install the Express framework in the folder.",
+    "main": "server-1.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Roman Akhmetshin",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.15.4"
+    }
+}
