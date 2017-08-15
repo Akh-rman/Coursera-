@@ -1,0 +1,16 @@
+{
+    "name": "node-mongoose",
+    "version": "1.0.0",
+    "description": " Install Mongoose.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Roman Akhmetshin",
+    "license": "ISC",
+    "dependencies": {
+        "assert": "^1.4.1",
+        "mongoose": "^4.11.6",
+        "mongoose-currency": "^0.2.0"
+    }
+}
