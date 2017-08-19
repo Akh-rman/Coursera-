@@ -1,5 +1,5 @@
 {
-    "name": "express install",
+    "name": "expressinstall",
     "version": "1.0.0",
     "description": "Install the Express framework in the folder.",
     "main": "server-1.js",
