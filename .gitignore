@@ -1,3 +1,4 @@
+.idea
 /Front-End JavaScript Frameworks: AngularJS/Main/Week 2/Grunt/conFusion/node_modules/
 /Front-End JavaScript Frameworks: AngularJS/Main/Week 2/Gulp/conFusion/node_modules/
 /Front-End JavaScript Frameworks: AngularJS/Homework 2/node_modules
@@ -26,3 +27,7 @@
 /Server-side Development with NodeJS/Main/Week 4/loopback-server/node_modules
 /Server-side Development with NodeJS/Homework 4/mongodb/data** 
 /Server-side Development with NodeJS/Homework 4/rest-server-passport/node_modules
+/Server-side Development with NodeJS/Main/Main/rest-server-passport/node_modules
+/Server-side Development with NodeJS/Main/Main/mongodb/data/**
+
+/Front-End JavaScript Frameworks: Angular/main/Week 1/conFusion/node_modules/
