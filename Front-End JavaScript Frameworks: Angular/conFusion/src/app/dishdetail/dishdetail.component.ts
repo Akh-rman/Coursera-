@@ -2,9 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 
 import { Params, ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import {Dish} from "../shared/dish";
+import { Dish } from "../shared/dish";
 import { DishService } from "../services/dish.service";
+import { Comment } from "../shared/comment";
 
 import 'rxjs/add/operator/switchMap';
 
@@ -19,8 +21,27 @@ export class DishdetailComponent implements OnInit {
   dishIds: number[];
   prev: number;
   next: number;
+  reviewForm: FormGroup;
+  review: Comment;
 
-  constructor(private dishService :DishService, private route: ActivatedRoute, private location: Location) { }
+  formErrors = {
+    'author': '',
+    'comment': ''
+  };
+
+  validationMessages = {
+    'author': {
+      'required':      'Author Name is required.',
+      'minlength':     'Author Name must be at least 2 characters long.'
+    },
+    'comment': {
+      'required':      'Comment is required.'
+    }
+  };
+
+  constructor(private dishService :DishService, private route: ActivatedRoute, private location: Location, private fb: FormBuilder) {
+    this.createForm();
+  }
 
   ngOnInit() {
     this.dishService.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
@@ -32,6 +53,17 @@ export class DishdetailComponent implements OnInit {
       });
   }
 
+  createForm(): void {
+    this.reviewForm = this.fb.group({
+      author: ["", [Validators.required, Validators.minLength(2)]],
+      rating: 5,
+      comment: ["", Validators.required]
+    });
+    this.reviewForm.valueChanges.subscribe(data => this.onValueChanged(data));
+
+    this.onValueChanged();
+  }
+
   setPrevNext(dishId: number) {
     let index = this.dishIds.indexOf(dishId);
     this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
@@ -40,6 +72,34 @@ export class DishdetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  onSubmit() {
+    this.review = this.reviewForm.value;
+    this.review.date = new Date().toISOString();
+    this.dish.comments.push(this.review);
+    console.log(this.review);
+    this.reviewForm.reset({
+      author: "",
+      rating: 5,
+      comment: ""
+    });
+
+  }
+
+  onValueChanged(data?: any) {
+    if (!this.reviewForm) { return; }
+    const form = this.reviewForm;
+    for (const field in this.formErrors) {
+      this.formErrors[field] = "";
+      const control = form.get(field);
+      if (control && control.dirty && !control.valid) {
+        const messages = this.validationMessages[field];
+        for (const key in control.errors) {
+          this.formErrors[field] += messages[key] + " ";
+        }
+      }
+    }
   }
 
 }
