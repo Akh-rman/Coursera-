@@ -21,8 +21,8 @@ export class DishdetailComponent implements OnInit {
   dishIds: number[];
   prev: number;
   next: number;
-  reviewForm: FormGroup;
-  review: Comment;
+  commentForm: FormGroup;
+  comment: Comment;
   errMess: string;
 
   formErrors = {
@@ -52,17 +52,17 @@ export class DishdetailComponent implements OnInit {
     this.dishService.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
       .switchMap((params: Params) => this.dishService.getDish(+params["id"]))
-      .subscribe(dish => {this.dish = dish;this.setPrevNext(dish.id);},
+      .subscribe(dish => {this.dish = dish; this.setPrevNext(dish.id);},
         errmess => this.errMess = <any>errmess);
   }
 
   createForm(): void {
-    this.reviewForm = this.fb.group({
+    this.commentForm = this.fb.group({
       author: ["", [Validators.required, Validators.minLength(2)]],
       rating: 5,
       comment: ["", Validators.required]
     });
-    this.reviewForm.valueChanges.subscribe(data => this.onValueChanged(data));
+    this.commentForm.valueChanges.subscribe(data => this.onValueChanged(data));
 
     this.onValueChanged();
   }
@@ -78,11 +78,11 @@ export class DishdetailComponent implements OnInit {
   }
 
   onSubmit() {
-    this.review = this.reviewForm.value;
-    this.review.date = new Date().toISOString();
-    this.dish.comments.push(this.review);
-    console.log(this.review);
-    this.reviewForm.reset({
+    this.comment = this.commentForm.value;
+    this.comment.date = new Date().toISOString();
+    this.dish.comments.push(this.comment);
+    console.log(this.comment);
+    this.commentForm.reset({
       author: "",
       rating: 5,
       comment: ""
@@ -91,8 +91,8 @@ export class DishdetailComponent implements OnInit {
   }
 
   onValueChanged(data?: any) {
-    if (!this.reviewForm) { return; }
-    const form = this.reviewForm;
+    if (!this.commentForm) { return; }
+    const form = this.commentForm;
     for (const field in this.formErrors) {
       this.formErrors[field] = "";
       const control = form.get(field);
