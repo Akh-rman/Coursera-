@@ -229,6 +229,10 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/lodash@^4.14.62":
+  version "4.14.109"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.109.tgz#b1c4442239730bf35cabaf493c772b18c045886d"
+
 "@types/node@^6.0.46", "@types/node@~6.0.60":
   version "6.0.109"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.109.tgz#addc070c5b0a528c286ff4188d7dcafdafbfdcce"
@@ -4081,6 +4085,13 @@ netmask@~1.0.4:
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
+
+ngx-restangular@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-restangular/-/ngx-restangular-3.0.0.tgz#0b8ae9cc9055b394d82a898325b04661dadb7c8b"
+  dependencies:
+    "@types/lodash" "^4.14.62"
+    tslib "^1.9.0"
 
 no-case@^2.2.0:
   version "2.3.2"
